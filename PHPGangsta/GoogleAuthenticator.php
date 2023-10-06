@@ -34,7 +34,7 @@ class PHPGangsta_GoogleAuthenticator
         if (function_exists('random_bytes')) {
             $rnd = random_bytes($secretLength);
         } elseif (function_exists('mcrypt_create_iv')) {
-            $rnd = mcrypt_create_iv($secretLength, MCRYPT_DEV_URANDOM);
+            $rnd = openssl_random_pseudo_bytes($secretLength);
         } elseif (function_exists('openssl_random_pseudo_bytes')) {
             $rnd = openssl_random_pseudo_bytes($secretLength, $cryptoStrong);
             if (!$cryptoStrong) {
@@ -109,7 +109,7 @@ class PHPGangsta_GoogleAuthenticator
             $urlencoded .= urlencode('&issuer='.urlencode($title));
         }
 
-        return "https://api.qrserver.com/v1/create-qr-code/?data=$urlencoded&size=${width}x${height}&ecc=$level";
+        return "https://api.qrserver.com/v1/create-qr-code/?data=$urlencoded&size={$width}x{$height}&ecc=$level";
     }
 
     /**

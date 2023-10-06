@@ -1,10 +1,10 @@
 {
     "name": "lequyettien/googleauthenticator",
-    "description": "Google Authenticator PHP class for two-factor authentication (2FA)",
-    "version": "1.0.0",
     "type": "library",
+    "description": "Google Authenticator PHP class for two-factor authentication (2FA)",
     "keywords": ["GoogleAuthenticator", "2FA", "TOTP", "rfc6238"],
-    "license": "BSD-4-Clause",
+    "homepage": "https://github.com/lequyettien/googleauthenticator",
+    "license": "MIT",
     "authors": [
         {
             "name": "Le Quyet Tien",
@@ -13,12 +13,8 @@
             "role": "Developer"
         }
     ],
-    "support": {
-        "source": "https://github.com/lequyettien/googleauthenticator",
-        "issues": "https://github.com/lequyettien/googleauthenticator/issues"
-    },
     "require": {
-        "php": ">=5.3"
+        "php": ">=8.0.0"
     },
 	"autoload": {
 		"classmap": ["PHPGangsta/GoogleAuthenticator.php"]
